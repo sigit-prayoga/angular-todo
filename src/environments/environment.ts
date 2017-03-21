@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+    host: 'http://localhost',
+    port: 8383,
+    baseUrl: '',
+    getPath: function(endPoint: string) {
+      return this.host + ':' + this.port + this.baseUrl + endPoint;
+    }
+  }
 };
