@@ -1,4 +1,17 @@
 <h2>{{errorMsg}}</h2>
-<ul *ngFor="let todo of todos">
-  <app-todo-item [todo]="todo"></app-todo-item>
-</ul>
+<div class="container">
+  <div class="page-header">
+    <h1>Todo App</h1>
+  </div>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="What's next?" [(ngModel)]="newTodo">
+    <span class="input-group-btn">
+        <button class="btn btn-success" type="button" (click)="addTodo()">Add!</button>
+      </span>
+  </div>
+  <br>
+  <ul *ngFor="let todo of todos">
+    <app-todo-item [todo]="todo"></app-todo-item>
+  </ul>
+
+</div>

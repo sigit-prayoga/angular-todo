@@ -11,6 +11,7 @@ import { TodoService } from './todo.service';
 export class AppComponent implements OnInit {
   todos: Todo[];
   errorMsg: string;
+  newTodo: string;
 
   constructor(private api: TodoService) { }
 
@@ -22,5 +23,14 @@ export class AppComponent implements OnInit {
     }, err => {
       this.errorMsg = err;
     });
+  }
+
+  addTodo() {
+    console.log(this.newTodo);
+    if (this.newTodo.length > 0) {
+      this.api.addTodo(this.newTodo).subscribe(res => {
+        this.todos.push(res);
+      });
+    }
   }
 }

@@ -1,4 +1,8 @@
-<h2>
-  {{todo.todo}}, done: {{todo.done}}
-</h2>
-<button (click)="updateTodo()">Update</button>
+<div class="card">
+  <div class="card-block">
+    {{todo.todo}}, done: {{todo.done}}
+    <div class="pull-right">
+      <button class="btn btn-primary" (click)="updateTodo()">Update</button>
+    </div>
+  </div>
+</div>
